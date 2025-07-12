@@ -1,0 +1,23 @@
+{
+    "familyName": "Okuku",
+    "dateFamilyMoveIn": "16-07-2015",
+    "numberOfPeople": 3,
+    "visitedByBishoric": true,
+    "familyMemberData": [
+        {
+        "name": "Manuel",
+        "gender": "Male",
+        "birthDate": "12-02-1990"
+    },
+    {
+        "name": "Monica",
+        "gender": "Female",
+        "birthDate": "06-08-1996"
+    },
+    {
+        "name": "Miya",
+        "gender": "Female",
+        "birthDate": "09-01-2022"
+    }
+]
+}
