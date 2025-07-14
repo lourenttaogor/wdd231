@@ -7,42 +7,41 @@
     <meta name="description" content="Directory of members for the Warri Chamber of Commerce. Find local businesses and services.">
     <meta name="author" content="Warri">
 
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon_io.zip" type="image/x-icon">
 
     <meta property="og:title" content="Directory - Warri Chamber of Commerce">
-    <meta property="og:description" content="Explore our directory of local businesses and members of the [Your City/Region] Chamber of Commerce.">
-    <meta property="og:image" content="https://yourwebsite.com/chamber/images/social-share-image.jpg">
-    <meta property="og:url" content="https://yourwebsite.com/chamber/directory.html">
+    <meta property="og:description" content="Explore our directory of local businesses and members of the Warri Chamber of Commerce.">
+    <meta property="og:image" content="images/favicon_io.zip">
+    <meta property="og:url" content="https://lourenttaogor.github.io/wdd231/chamber/directory.html">
     <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="../styles/normalize.css"> 
-    <link rel="stylesheet" href="styles/directory.css">
-    <link rel="stylesheet" href="styles/directory-large.css">
+    <link rel="stylesheet" href="styles/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="scripts/directory.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo-link">
-                <img src="images/chamber-logo.png" alt="Warri Chamber of Commerce Logo" class="logo">
+                <img src="../images/camera-solid.svg" alt="Warri Chamber of Commerce Logo" class="logo">
                 <h1>Warri Chamber of Commerce</h1>
             </a>
-            <nav>
-                <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-                <ul class="nav-menu">
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+    </header>
+    <nav>
+                <ul class="nav-menu" style="background-color: #2a6f97;">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="directory.html" class="active" aria-current="page">Directory</a></li>
                     <li><a href="join.html">Join</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
 
     <main class="directory-main">
         <h2>Member Directory</h2>
@@ -50,51 +49,18 @@
             <button id="grid-view" class="active">Grid View</button>
             <button id="list-view">List View</button>
         </div>
-        <section id="member-display" class="grid-view">
-            <div class="member-card">
-                <img src="images/placeholder-business.jpg" alt="Business 1 Logo">
-                <h3>Business Name 1</h3>
-                <p>Address: 123 Main St</p>
-                <p>Phone: (123) 456-7890</p>
-                <p><a href="#" target="_blank">Website</a></p>
-            </div>
-            <div class="member-card">
-                <img src="images/placeholder-business.jpg" alt="Business 2 Logo">
-                <h3>Business Name 2</h3>
-                <p>Address: 456 Oak Ave</p>
-                <p>Phone: (987) 654-3210</p>
-                <p><a href="#" target="_blank">Website</a></p>
-            </div>
-            <div class="member-card">
-                <img src="images/placeholder-business.jpg" alt="Business 3 Logo">
-                <h3>Business Name 3</h3>
-                <p>Address: 789 Pine Rd</p>
-                <p>Phone: (555) 123-4567</p>
-                <p><a href="#" target="_blank">Website</a></p>
-            </div>
-            </section>
+        <section id="member-display" class="grid-view"></section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="contact-info">
-                <h3>[Your City/Region] Chamber of Commerce</h3>
-                <p>123 Chamber Way, [Your City/Region], [Your State/Province] [Zip Code]</p>
-                <p>Email: <a href="mailto:info@yourchamber.org">info@yourchamber.org</a></p>
-                <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
-            </div>
-            <div class="social-media-links">
-                <a href="#" aria-label="Facebook"><img src="images/icon-facebook.png" alt="Facebook"></a>
-                <a href="#" aria-label="Twitter"><img src="images/icon-twitter.png" alt="Twitter"></a>
-                <a href="#" aria-label="LinkedIn"><img src="images/icon-linkedin.png" alt="LinkedIn"></a>
-            </div>
             <div class="development-info">
-                <p>&copy; <span id="currentyear"></span> Warri Chamber | [Your Full Name] | WDD 231</p>
-                <p>Last Modified: <span id="lastmodified"></span></p>
+                <p> &copy; <span id="currentyear"></span> Warri Chamber | Okuku Ogorchukwu Lourentta | WDD 231</p>
+                <p id="lastModified"></p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    
 </body>
 </html>

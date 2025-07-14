@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Acme Innovations",
+        "address": "123 Tech Lane, Cityville, CA 90210",
+        "phone": "(555) 111-2222",
+        "website": "https://www.acmeinnovations.com",
+        "image": "images/site-header.webp",
+        "membershipLevel": 3,
+        "description": "Leading the way in sustainable technology solutions."
+    },
+    {
+        "name": "Green Thumb Landscaping",
+        "address": "456 Garden Path, Cityville, CA 90210",
+        "phone": "(555) 333-4444",
+        "website": "https://www.greenthumb.com",
+        "image": "images/site-header.webp",
+        "membershipLevel": 2,
+        "description": "Creating beautiful outdoor spaces since 2005."
+    },
+    {
+        "name": "City Bites Bakery",
+        "address": "789 Main Street, Cityville, CA 90210",
+        "phone": "(555) 555-6666",
+        "website": "https://www.citybitesbakery.com",
+        "image": "images/site-header.webp",
+        "membershipLevel": 1,
+        "description": "Freshly baked goods and custom cakes daily."
+    },
+    {
+        "name": "Prime Fitness Center",
+        "address": "101 Workout Way, Cityville, CA 90210",
+        "phone": "(555) 777-8888",
+        "website": "https://www.primefitness.com",
+        "image": "images/site-header.webp",
+        "membershipLevel": 3,
+        "description": "Your premier destination for health and wellness."
+    },
+    {
+        "name": "Artisan Crafts Studio",
+        "address": "222 Creative Alley, Cityville, CA 90210",
+        "phone": "(555) 999-0000",
+        "website": "https://www.artisancrafts.net",
+        "image": "images/site-header.webp",
+        "membershipLevel": 2,
+        "description": "Handmade unique gifts and art supplies."
+    },
+    {
+        "name": "Secure Solutions IT",
+        "address": "333 Cyber Road, Cityville, CA 90210",
+        "phone": "(555) 123-4567",
+        "website": "https://www.securesolutions.com",
+        "image": "images/site-header.webp",
+        "membershipLevel": 1,
+        "description": "Reliable IT support and cybersecurity services."
+    },
+    {
+        "name": "The Book Nook",
+        "address": "444 Story Lane, Cityville, CA 90210",
+        "phone": "(555) 234-5678",
+        "website": "https://www.thebooknook.org",
+        "image": "images/site-header.webp",
+        "membershipLevel": 1,
+        "description": "A cozy independent bookstore with a wide selection."
+    }
+]
