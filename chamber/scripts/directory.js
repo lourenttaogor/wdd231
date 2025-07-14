@@ -8,18 +8,6 @@ window.addEventListener('pagehide', function(event) {
     }
 });
 
-window.addEventListener('pageshow', function(event) {
-    if (event.persisted) {
-        console.log('Page restored from bfcache!');
-        // Re-enable animations, restart timers, etc., that were paused on pagehide
-    } else {
-        console.log('Page loaded normally.');
-        // Initial setup
-    }
-    // Code here runs every time the page becomes visible (initial load or bfcache restore)
-    // Good place to ensure UI elements reflect current state
-});
-
 const members = ("../members.json")
 
 const currentYearElements = document.querySelector('#currentyear');
