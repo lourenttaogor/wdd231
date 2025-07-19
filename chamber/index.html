@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okuku Ogorchukwu Lourentta - WDD 231 - Chamber of Commerce Home</title>
+    <meta name="description" content="Welcome to the local Chamber of Commerce. We support local businesses and foster community growth.">
+    <meta name="description" content="Home page for Warri Chamber of Commerce. Find local businesses and services.">
+    <meta name="author" content="Okuku Ogorchukwu Lourentta">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Home - Warri Chamber of Commerce">
+    <meta property="og:description" content="Explore our Home page of local businesses and members of the Warri Chamber of Commerce.">
+    <meta property="og:image" content="images/favicon_io.zip">
+    <meta property="og:url" content="https://lourenttaogor.github.io/wdd231/chamber/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/home-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="scripts/home.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="../images/camera-solid.svg" alt="Chamber of Commerce Logo" class="logo">
+                <h1>Home - Warri Chamber of Commerce</h1>
+            </a>
+            <nav>
+                <button id="ham-btn" class="hamburger"></button>
+                <ul class="navigation" id="mainNav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="home-main">
+        <section class="hero-section">
+            <picture>
+                <source srcset="images/large.webp" media="(min-width: 1000px)">
+                <source srcset="images/warri.webp" media="(min-width: 600px)">
+                <img src="images/warri.webp" alt="Cityscape at sunset" class="hero-image">
+            </picture>
+            <div class="hero-text">
+                <p>Supporting local businesses and fostering growth.</p>
+                <a href="join.html" class="cta-button">Join the Chamber!</a>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="events-section">
+            <h3>Upcoming Events</h3>
+            <article class="event-card">
+                <h4>Annual Business Expo</h4>
+                <p><strong>Date:</strong> August 15, 2025</p>
+                <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                <p>Join us for our biggest event of the year! Network with local businesses and discover new opportunities. Free for members, $25 for non-members.</p>
+            </article>
+            <article class="event-card">
+                <h4>Monthly Networking Luncheon</h4>
+                <p><strong>Date:</strong> July 25, 2025</p>
+                <p><strong>Time:</strong> 12:00 PM - 1:30 PM</p>
+                <p>Connect with fellow business owners over lunch. This month's topic: "Leveraging Social Media for Local Growth."</p>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="weather-section">
+            <h3>Local Weather</h3>
+            <div class="weather-data">
+                <p><strong>Current Temperature:</strong> <span id="current-temp">--</span>°C</p>
+                <p><strong>Description:</strong> <span id="weather-desc">--</span></p>
+                <div class="forecast-container" id="forecast-container">
+                    <h4>3-Day Forecast:</h4>
+                    </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="spotlights-section">
+            <h3>Member Spotlights</h3>
+            <div class="spotlight-grid" id="spotlight-grid">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; <span id="currentYear"></span> Local Chamber | WDD 230 Project</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

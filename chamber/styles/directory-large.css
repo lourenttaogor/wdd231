@@ -1,3 +1,4 @@
+
 @media (max-width: 32rem) {
     .header-content {
         text-align: center;
@@ -60,24 +61,5 @@
         flex-basis: 100%;
         text-align: center;
         margin: 0.2rem 0;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 20px;
-    }
-
-    .logo {
-        height: 50px;
-    }
-
-    .directory-main h2 {
-        font-size: 1.8rem;
-    }
-
-    .view-toggle button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
     }
 }

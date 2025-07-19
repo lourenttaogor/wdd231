@@ -1,0 +1,379 @@
+/* chamber/styles.css */
+/* General Styles */
+:root {
+    --primary-color: #0056b3; /* A nice blue */
+    --secondary-color: #f8f9fa; /* Light gray */
+    --accent-color: #28a745; /* Green for CTA */
+    --text-color: #333;
+    --light-text-color: #fff;
+    --border-color: #ddd;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 2em 0;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1rem 2rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    color: var(--light-text-color);
+    text-decoration: none;
+}
+
+.logo {
+    height: 60px; /* Adjust as needed */
+    width: auto;
+    margin-right: 15px;
+}
+
+header h1 {
+    color: var(--light-text-color);
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Navigation */
+nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation li a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: var(--light-text-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navigation li a:hover,
+.navigation li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.hamburger{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.hamburger::before{
+    content: "\2630";
+    font-size: 2rem;
+    color: var(--light-text-color);
+}
+
+.hamburger.show::before{
+    content: "\00D7";
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.navigation {
+  display: none;
+}
+
+.navigation.show {
+  display: block;
+}
+
+
+/* Main Content */
+main {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: var(--light-text-color);
+    margin-bottom: 2em;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    filter: brightness(0.7); /* Darken image slightly for text readability */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.hero-text h2 {
+    color: var(--light-text-color);
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    text-decoration: none;
+}
+
+/* Events Section */
+.events-section {
+    padding: 1em;
+}
+
+.event-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.event-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+/* Weather Section */
+.weather-section {
+    padding: 1em;
+    text-align: center;
+}
+
+.weather-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.weather-data p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.forecast-container {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.forecast-day {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.8em;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.forecast-day p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Spotlights Section */
+.spotlights-section {
+    padding: 1em;
+}
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+}
+
+.spotlight-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spotlight-card img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+
+.spotlight-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+}
+
+.spotlight-card p {
+    margin: 0.3em 0;
+    font-size: 0.95em;
+}
+
+.spotlight-card .membership-level {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 0.5em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-info p {
+    margin: 0.5em 0;
+    font-size: 0.9em;
+}
+
+/* Directory Page Specific Styles (from previous week, assuming it's merged) */
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.list-view .member-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 20px;
+}
+
+.list-view .member-card:last-child {
+    border-bottom: none;
+}
+
+.list-view .member-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.list-view .member-card .member-details {
+    flex-grow: 1;
+}
+
+.list-view .member-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.list-view .member-card p {
+    margin: 0;
+}
+
+.view-buttons {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.view-buttons button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    padding: 0.5em 1em;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-buttons button:hover {
+    background-color: #004085;
+}
