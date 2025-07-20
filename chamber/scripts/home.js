@@ -121,7 +121,7 @@ window.addEventListener('scroll', () => {
 
         async function fetchMembers() {
             try {
-                const response = await fetch('data/members.json'); // Assumes members.json is in a 'data' folder
+                const response = await fetch('members.json'); // Assumes members.json is in a 'data' folder
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -133,12 +133,13 @@ window.addEventListener('scroll', () => {
             }
         }
 
-        function displaySpotlights(members) { // Accept members array as an argument
+        function displaySpotlights(members) { // 'members' here is the array of member objects
             const spotlightGrid = document.getElementById('spotlight-grid');
             spotlightGrid.innerHTML = ''; // Clear existing spotlights
 
-            // Filter for Gold or Silver members
-            const qualifiedMembers = members.filter(member => member.membership === "Gold" || member.membership === "Silver");
+            // CORRECTED LINE: Access 'member.membership' directly within the filter callback
+            // Assuming your JSON uses "membership" (as in the sample provided previously: "membership": "Gold")
+            const qualifiedMembers = members.filter(member => member.membershipLevel === "Gold" || member.membershipLevel === "Silver");
 
             // Handle case where there aren't enough qualified members
             if (qualifiedMembers.length < 2) {
@@ -148,24 +149,25 @@ window.addEventListener('scroll', () => {
 
             // Shuffle qualified members and pick 2 or 3
             const shuffledMembers = qualifiedMembers.sort(() => 0.5 - Math.random());
-            const numberOfSpotlights = Math.min(Math.floor(Math.random() * 2) + 2, qualifiedMembers.length); // Randomly 2 or 3, but not more than available
+            // Ensure numberOfSpotlights doesn't exceed the number of available qualified members
+            const numberOfSpotlights = Math.min(Math.floor(Math.random() * 2) + 2, qualifiedMembers.length);
             const selectedSpotlights = shuffledMembers.slice(0, numberOfSpotlights);
 
             selectedSpotlights.forEach(member => {
                 const card = document.createElement('div');
                 card.classList.add('spotlight-card');
                 card.innerHTML = `
-                    <img src="${member.logo}" alt="${member.name} Logo">
+                    <img src="${member.image}" alt="${member.name} Logo">
                     <h4>${member.name}</h4>
                     <p>${member.address}</p>
                     <p>${member.phone}</p>
                     <p><a href="${member.website}" target="_blank">${member.website.replace(/(^\w+:|^)\/\//, '')}</a></p>
-                    <p class="membership-level">${member.membership} Member</p>
-                `;
+                    <p class="membership-level">${member.membershipLevel} Member</p>`;
                 spotlightGrid.appendChild(card);
             });
         }
 
-        fetchMembers(); // Call fetchMembers to load data and then display spotlights
+        fetchMembers();
+
     }
 });
