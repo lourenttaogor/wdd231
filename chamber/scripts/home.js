@@ -158,7 +158,7 @@ window.addEventListener('scroll', () => {
                 card.classList.add('spotlight-card');
                 card.innerHTML = `
                     <img src="${member.image}" alt="${member.name} Logo">
-                    <h4>${member.name}</h4>
+                    <h3>${member.name}</h3>
                     <p>${member.address}</p>
                     <p>${member.phone}</p>
                     <p><a href="${member.website}" target="_blank">${member.website.replace(/(^\w+:|^)\/\//, '')}</a></p>
