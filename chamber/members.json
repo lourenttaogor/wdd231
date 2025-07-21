@@ -18,13 +18,13 @@
         "description": "Creating beautiful outdoor spaces since 2005."
     },
     {
-        "name": "City Bites Bakery",
-        "address": "789 Main Street, Cityville, CA 90210",
-        "phone": "(555) 555-6666",
-        "website": "https://www.citybitesbakery.com",
-        "image": "images/site-header.webp",
+        "name": "D'Laurels",
+        "address": "Anambra, Nigeria",
+        "phone": "000000000000",
+        "website": "https://www.dlaurels.com",
+        "image": "images/my-love.webp",
         "membershipLevel": "Gold",
-        "description": "Freshly baked goods and custom cakes daily."
+        "description": "Providing solutions with tech."
     },
     {
         "name": "Prime Fitness Center",
