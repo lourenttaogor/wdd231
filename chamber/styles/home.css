@@ -9,6 +9,11 @@
     --border-color: #ddd;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -310,6 +315,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .footer-info p {
