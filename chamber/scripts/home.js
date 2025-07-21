@@ -147,11 +147,11 @@ window.addEventListener('scroll', () => {
                 return;
             }
 
-            // Shuffle qualified members and pick 2 or 3
-            const shuffledMembers = qualifiedMembers.sort(() => 0.5 - Math.random());
-            // Ensure numberOfSpotlights doesn't exceed the number of available qualified members
-            const numberOfSpotlights = Math.min(Math.floor(Math.random() * 2) + 2, qualifiedMembers.length);
-            const selectedSpotlights = shuffledMembers.slice(0, numberOfSpotlights);
+            // // Shuffle qualified members and pick 2 or 3
+            // const shuffledMembers = qualifiedMembers.sort(() => 0.5 - Math.random());
+            // // Ensure numberOfSpotlights doesn't exceed the number of available qualified members
+            // const numberOfSpotlights = Math.min(Math.floor(Math.random() * 2) + 2, qualifiedMembers.length);
+            // const selectedSpotlights = shuffledMembers.slice(0, numberOfSpotlights);
 
             qualifiedMembers.forEach(member => {
                 const card = document.createElement('div');
