@@ -36,20 +36,20 @@
         "description": "Your premier destination for health and wellness."
     },
     {
-        "name": "Artisan Crafts Studio",
-        "address": "222 Creative Alley, Cityville, CA 90210",
-        "phone": "(555) 999-0000",
-        "website": "https://www.artisancrafts.net",
-        "image": "images/site-header.webp",
+        "name": "Daniel Ifeanyi Foundation",
+        "address": "Anambra, Nigeria",
+        "phone": "(234) 999-0000",
+        "website": "https://www.danielifeanyifoundation.net",
+        "image": "images/my-love.webp",
         "membershipLevel": "Silver",
-        "description": "Handmade unique gifts and art supplies."
+        "description": "Our goal is to give hope to the hopeless."
     },
     {
-        "name": "Secure Solutions IT",
+        "name": "Daniels Solutions IT",
         "address": "333 Cyber Road, Cityville, CA 90210",
         "phone": "(555) 123-4567",
         "website": "https://www.securesolutions.com",
-        "image": "images/site-header.webp",
+        "image": "images/my-love.webp",
         "membershipLevel": "Gold",
         "description": "Reliable IT support and cybersecurity services."
     },

@@ -153,7 +153,7 @@ window.addEventListener('scroll', () => {
             const numberOfSpotlights = Math.min(Math.floor(Math.random() * 2) + 2, qualifiedMembers.length);
             const selectedSpotlights = shuffledMembers.slice(0, numberOfSpotlights);
 
-            selectedSpotlights.forEach(member => {
+            qualifiedMembers.forEach(member => {
                 const card = document.createElement('div');
                 card.classList.add('spotlight-card');
                 card.innerHTML = `
