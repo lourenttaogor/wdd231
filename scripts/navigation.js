@@ -18,3 +18,4 @@ window.addEventListener('scroll', () => {
         navBar.classList.remove('fixed'); // Remove fixed on small screens
     }
 });
+

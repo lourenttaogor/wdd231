@@ -115,8 +115,35 @@ const displayCourses = (filter = 'All') => {
     });
 }
 
-document.querySelectorAll('.cert').forEach(button => {
+const cert = document.querySelectorAll('.cert');
+
+
+cert.forEach(button => {
     button.addEventListener('click', (e) => {
         displayCourses(button.textContent); // or use button.dataset.filter if you set it
+        displayCourseDetails(courses);
     });
 });
+
+function displayCourseDetails(course) {
+  const courseDetails = document.querySelector("#course-details");
+  courseDetails.innerHTML = '';
+  courseDetails.innerHTML = `
+    <button id="closeModal">❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology}</p>
+  `;
+  
+  courseDetails.showModal();
+  
+  closeModal.addEventListener("click", () => {
+    courseDetails.close();
+  });
+
+}
+
+
