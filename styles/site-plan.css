@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+    display: block;
+}
+
+h1 {
+    color: rgb(29, 109, 13);
+    font-size: 3rem;
+}
+h2{
+    color: rgb(2, 2, 54);
+    font-size: 2rem;
+}
+p, ul{
+    font-size: 1.8rem;
+}
+
+section{
+    margin-bottom: 2rem;
+}
