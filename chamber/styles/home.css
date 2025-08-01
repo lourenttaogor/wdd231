@@ -149,7 +149,6 @@ nav {
 /* Main Content */
 main {
     padding: 1.5rem;
-    max-width: 1200px;
     margin: 20px auto;
     background-color: #fff;
     border-radius: 8px;
@@ -169,7 +168,7 @@ main {
     display: block;
     border-radius: 8px;
     object-fit: cover;
-    filter: brightness(0.7); /* Darken image slightly for text readability */
+    filter: brightness(0.7); 
 }
 
 .hero-text {
@@ -196,11 +195,10 @@ main {
 }
 
 .cta-button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
     text-decoration: none;
 }
 
-/* Events Section */
 .events-section {
     padding: 1em;
 }
@@ -383,4 +381,49 @@ footer {
 
 .view-buttons button:hover {
     background-color: #004085;
+}
+
+.places div{
+    display: grid;
+    border-radius: 20px 20px;
+    border: 1px solid grey;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    grid-template-areas: 
+    "name"
+    "photo"
+    "description"
+    "address"
+    ;
+}
+
+.places div img{
+    width: 300px;
+    height: 200px;
+    grid-area: photo;
+}
+
+div h3{
+    grid-area: name;
+    
+}
+
+div p:nth-last-of-type(1){
+    grid-area: description;
+    
+}
+
+div .address{
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    grid-area: address;
+}
+
+.places-sect h2{
+        text-align: center;
+        margin-bottom: 18px;
 }

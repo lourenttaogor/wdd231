@@ -1,4 +1,4 @@
-@media (min-width: 32rem) {
+@media only screen and (min-width: 32rem) {
     .header-content {
         flex-wrap: nowrap;
     }
@@ -60,4 +60,16 @@
     .spotlight-grid {
         grid-template-columns: repeat(3, 1fr); /* Three columns for spotlights */
     }
+    
+    .places-sect{
+        width: 100%;
+    }
+
+    .places div{
+    grid-template-areas: 
+    "photo name"
+    "photo description"
+    "photo address"
+    ;
+}
 }
