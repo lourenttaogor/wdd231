@@ -8,27 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let today = new Date();
     let modified = new Date(document.lastModified);
 
-    // Using getFullYear() for just the year for currentYear, as per typical footer practice.
-    // If you explicitly want the full date here, that's fine, but year is common.
-    currentYearElements.textContent = today.getFullYear(); // Simplified for just the year
+
+    currentYearElements.textContent = today.getFullYear(); 
 
     modifiedYearElements.innerHTML = `Last Modified ${new Intl.DateTimeFormat('en-UK', {
         year: 'numeric', month: 'long', day: 'numeric', weekday: 'long'
     }).format(modified)}`;
 
 
-    // 2. **Hamburger Menu (Interactive, doesn't block):**
-    //    This is an event listener, so it doesn't execute heavy code until clicked.
+
     const navIcon = document.querySelector("#ham-btn");
     const navBar = document.querySelector('.navigation');
+    let header = document.querySelector("header");
 
     navIcon.addEventListener("click", () => {
         navIcon.classList.toggle("show");
         navBar.classList.toggle('show');
     });
 
-    // 3. **Functions (Defined, but not called yet):**
-    //    Define your functions here.
+    window.addEventListener('scroll', () => {
+    if (window.innerWidth >= 608) { // Only for large screens
+        if (window.scrollY > 50) {
+            header.classList.add('fixed');
+        } else {
+            navBar.classList.remove('fixed');
+        }
+    } else {
+        navBar.classList.remove('fixed'); // Remove fixed on small screens
+    }
+});
+
+    
     function displayPlaces(placesData) { // Renamed 'place' to 'placesData' for clarity
         const placesGrid = document.querySelector('.places');
         if (!placesGrid) {
@@ -45,10 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add a class to the card if needed, e.g., 'place-card'
             card.classList.add('place-card');
             card.innerHTML = `
-                <img src="${place.photo}" alt="${place.name}">
+                <img src="${place.photo}" alt="${place.name}" loading = "lazy">
                 <h3>${place.name}</h3>
-                <p class="address">${place.address}</p>
-                <p>${place.description}</p>`;
+                <address class="address">${place.address}</address>
+                <p>${place.description}</p>
+                <button>Learn more</button>`
             fragment.appendChild(card);
         });
         placesGrid.appendChild(fragment);
@@ -80,13 +91,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!lastVisitTimestamp) {
             visitCount = 1;
-            alert('Welcome! Let us know if you have any questions.');
+           let par = document.createElement("p");
+           
+
+           par.textContent = "Welcome! Let us know if you have any questions.";
+           par.className = 'my-new-paragraph';
+           par.classList.add("my-new-paragraph");
+           header.insertAdjacentElement('afterend', par);
         } else {
             const daysAgo = Math.floor((now - lastVisitTimestamp) / MS_PER_DAY);
             if (daysAgo < 1) {
-                alert("Back so soon! Awesome!");
+                let par = document.createElement("p");
+
+                par.textContent = "Back so soon! Awesome!";
+                par.className = 'my-new-paragraph';
+                par.classList.add("my-new-paragraph");
+                header.insertAdjacentElement('afterend', par);
             } else {
-                alert(`You last visited ${daysAgo} day(s) ago.`);
+                let par = document.createElement("p");
+
+                par.textContent = `You last visited ${daysAgo} day(s) ago.`;
+                par.className = 'my-new-paragraph';
+                par.classList.add("my-new-paragraph");
+                header.insertAdjacentElement('afterend', par);
             }
             visitCount = parseInt(visitCount || 0) + 1; 
         }

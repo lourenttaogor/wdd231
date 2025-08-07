@@ -1,5 +1,4 @@
-/* chamber/styles.css */
-/* General Styles */
+
 :root {
     --primary-color: #0056b3; /* A nice blue */
     --secondary-color: #f8f9fa; /* Light gray */
@@ -95,6 +94,10 @@ header h1 {
 nav {
     flex-grow: 1;
     text-align: right;
+}
+
+.fixed{
+    position: fixed;
 }
 
 .navigation {
@@ -395,6 +398,7 @@ footer {
     "photo"
     "description"
     "address"
+    "button"
     ;
 }
 
@@ -415,12 +419,23 @@ div p:nth-last-of-type(1){
 }
 
 div .address{
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
     width: 100%;
     text-align: center;
     border-radius: 10px;
     grid-area: address;
+}
+div button{
+       background-color: var(--primary-color);
+       color: var(--light-text-color);
+       grid-area: button;
+       border-radius: 20px;
+       height: 50px;
+       border: none;
+}
+
+.my-new-paragraph{
+    text-align: center;
+    font-size: 3rem;
 }
 
 .places-sect h2{

@@ -20,7 +20,7 @@
     }
 
     .navigation {
-        display: flex !important; /* Always show navigation on large screens */
+        display: flex; 
     }
 
     .hero-text h2 {
@@ -70,6 +70,7 @@
     "photo name"
     "photo description"
     "photo address"
+    "photo button"
     ;
 }
 }
