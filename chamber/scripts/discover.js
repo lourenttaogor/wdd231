@@ -38,6 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+  let url = "places.json";
+
+
+
+    async function placeFetch() {
+        try {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json(); // Use const here for scope
+            console.log(data);
+            displayPlaces(data);
+        } catch (error) {
+            console.error('Error fetching place data:', error);
+        }
+    }
+
+
+
     
     function displayPlaces(placesData) { // Renamed 'place' to 'placesData' for clarity
         const placesGrid = document.querySelector('.places');
@@ -63,21 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fragment.appendChild(card);
         });
         placesGrid.appendChild(fragment);
-    }
-
-    async function placeFetch() {
-        try {
-            const response = await fetch(`/chamber/scripts/places.json`);
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json(); // Use const here for scope
-            displayPlaces(data);
-        } catch (error) {
-            console.error('Error fetching member data:', error);
-        }
     }
 
 
