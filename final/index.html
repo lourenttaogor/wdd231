@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Laurels Estate</title>
+    <meta name="description" content="Home page D'Laurels Estate, explore our properties and join the community">
+    <meta name="author" content="Okuku Ogorchukwu Lourentta">
+
+    <link rel="icon" href="images/dlaurels.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Home - D'Laurels Estate">
+    <meta property="og:description" content="Home page D'Laurels Estate, explore our properties and join the community.">
+    <meta property="og:image" content="images/dlaurels.ico">
+    <meta property="og:url" content="https://lourenttaogor.github.io/wdd231/dlaurelsestate/index.com">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles/dlaurels.css">
+    <link rel="stylesheet" href="styles/dlaurels-large.css">
+    <script src="scripts/dlaurels.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <div class="header-content">
+        <div class="icon">
+            <img src="images/logo.webp" alt="Logo" class="logo">
+            <button id="ham-btn" class="hamburger"></button>
+        </div>
+        <div>
+        <nav id="nav-bar" class="navigation">
+        <ul>
+            <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+        </nav>
+        </div>
+        </div>
+        <div class="carousel-container">
+    <div class="carousel-slide-wrapper">
+
+        <div class="carousel-slide">
+            <picture>
+                <source srcset="images/carousel1-large.webp" media="(min-width: 32rem)" type="image/webp">
+                <img src="images/carousel1.webp" alt="first carousel" width="512" height="341" loading="lazy">
+            </picture>
+            <div class="carousel-text">
+                <h1>D'Laurels Estate</h1>
+                <p>Find Your Desired Property at Ease</p>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+           <picture>
+                <source srcset="images/carousel2.webp" media="(min-width: 32rem)" type="image/webp">
+                <img src="images/carousel2-small.webp" alt="second carousel" width="512" height="341" loading="lazy">
+            </picture>
+            <div class="carousel-text">
+                <h1>We've Got You Covered</h1>
+                <p>Our Properties are Verified</p>
+            </div>
+        </div>
+        
+    </div>
+    <button id="prevBtn" class="carousel-btn">Previous</button>
+    <button id="nextBtn" class="carousel-btn">Next</button>
+</div>
+    </nav>
+   </div>
+
+    </header>
+    <main>
+        <section class="post-property" id="add-property">
+        </section>
+        <section id="myPosts" class="tab-content" style="display:none;">
+
+        </section>
+    </main>
+    <footer>
+        <p> &copy; <span id="currentyear"></span> D'Laurels Estate</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
