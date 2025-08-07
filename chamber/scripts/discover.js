@@ -51,8 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            const data = await response.json(); // Use const here for scope
-            console.log(data);
+            const data = await response.json(); 
             displayPlaces(data);
         } catch (error) {
             console.error('Error fetching place data:', error);
