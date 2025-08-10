@@ -30,6 +30,7 @@ body{
 
     .hamburger {
         border: none;
+        padding: 1rem;
         background: none;
         cursor: pointer;
         top: 15px;
