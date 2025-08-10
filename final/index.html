@@ -12,7 +12,7 @@
     <meta property="og:title" content="Home - D'Laurels Estate">
     <meta property="og:description" content="Home page D'Laurels Estate, explore our properties and join the community.">
     <meta property="og:image" content="images/dlaurels.ico">
-    <meta property="og:url" content="https://lourenttaogor.github.io/wdd231/dlaurelsestate/index.com">
+    <meta property="og:url" content="https://lourenttaogor.github.io/wdd231/dlaurelsestate/index.html">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles/dlaurels.css">
     <link rel="stylesheet" href="styles/dlaurels-large.css">
@@ -33,10 +33,9 @@
         <nav id="nav-bar" class="navigation">
         <ul>
             <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul> 
         </nav>
         </div>
         </div>
@@ -66,8 +65,8 @@
         </div>
         
     </div>
-    <button id="prevBtn" class="carousel-btn">Previous</button>
-    <button id="nextBtn" class="carousel-btn">Next</button>
+    <button id="prevBtn" class="carousel-btn"></button>
+    <button id="nextBtn" class="carousel-btn"></button>
 </div>
     </nav>
    </div>
@@ -76,12 +75,19 @@
     <main>
         <section class="post-property" id="add-property">
         </section>
-        <section id="myPosts" class="tab-content" style="display:none;">
-
+        <section class="weather-section">
+            <h2>Local Weather</h2>
+            <div class="weather-data">
+                <p><strong>Current Temperature:</strong> <span id="current-temp">--</span>°C</p>
+                <p><strong>Description:</strong> <span id="weather-desc">--</span></p>
+                <div class="forecast-container" id="forecast-container">
+                    <h3>4-Day Forecast:</h3>
+                    </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p> &copy; <span id="currentyear"></span> D'Laurels Estate</p>
+        <p> &copy; <span id="currentyear"></span> D'Laurels Estate | WDD 231 Project</p>
         <p id="lastModified"></p>
     </footer>
 </body>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <meta name="description" content="About page for D'Laurels Estate, Learn about our vision and our executive board">
+    <meta name="author" content="Okuku Ogorchukwu Lourentta">
+
+    <link rel="icon" href="images/dlaurels.ico" type="image/x-icon">
+
+    <meta property="og:title" content="About">
+    <meta property="og:description" content="About page for D'Laurels Estate, Learn about our vision and our executive board">
+    <meta property="og:image" content="images/dlaurels.ico">
+    <meta property="og:url" content="https://lourenttaogor.github.io/wdd231/dlaurelsestate/about.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/dlaurels-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="scripts/about.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+        <div class="icon">
+            <img src="images/logo.webp" alt="Logo" class="logo">
+            <button id="ham-btn" class="hamburger"></button>
+        </div>
+         <h1>About Us</h1>
+        <div>
+        <nav id="nav-bar" class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        </ul> 
+        </nav>
+    </div>
+    </nav>
+   </div>
+    </header>
+
+    <main class="about-page">
+
+        <section>
+            <h2>Our Vision</h2>
+            <p>Our vision is to provide a platform that limits the burden of house hunting by connecting Clients to verified property agents or owners, in the most accessible way.</p>
+        </section>
+        <section>
+            <h2>Our Executive Board</h2>
+            <div class="exe-board">
+                <div>
+                    <img src="../chamber/images/my-love.webp" alt="board member">
+                    <h3>Daniel Ifeanyi</h3>
+                    <h4>Charman</h4>
+                </div>
+                <div>
+                    <img src="../chamber/images/site-header.webp" alt="board member">
+                    <h3>Ogorchukwu Lourentta</h3>
+                    <h4>Director</h4>
+                </div>
+                <div>
+                    <img src="images/board1.webp" alt="board member">
+                    <h3>James Macauley</h3>
+                    <h4>Board Member</h4>
+                </div>
+                <div>
+                    <img src="images/board2.webp" alt="board member">
+                    <h3>Aliya Daysman</h3>
+                    <h4>Marketing Lead</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; <span id="currentYear"></span> D'Laurels Estate | WDD 231 Project</p>
+                <p><span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

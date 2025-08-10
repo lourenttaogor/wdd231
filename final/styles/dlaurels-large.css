@@ -33,7 +33,7 @@
 
     .carousel-text {
         position: absolute;
-        bottom: 50%;
+        bottom: 60%;
         left: 5%; /* Position from the right is now controlled by max-width */
         width: 100%;
         text-align: center;
@@ -72,11 +72,10 @@
         background-color: rgba(255, 255, 255, 0.4);
     }
 
-    #prevBtn {
-        left: 20px;
-    }
-
-    #nextBtn {
-        right: 20px;
+    #add-property, .exe-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .weather-section {
+        grid-area: weather;
     }
 }

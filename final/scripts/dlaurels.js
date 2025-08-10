@@ -38,6 +38,54 @@ modifiedYearElements.innerHTML = `Last Modified ${new Intl.DateTimeFormat('en-UK
 ).format(modified)}`;
 
 
+const url = "apartments.json";
+
+async function apartmentFetch() {
+        try {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json(); 
+            displayApartment(data);
+        } catch (error) {
+            console.error('Error fetching place data:', error);
+        }
+    }
+
+
+
+    
+    function displayApartment(apartmentData) { // Renamed 'place' to 'placesData' for clarity
+        const apartmentGrid = document.querySelector('#add-property');
+        if (!apartmentGrid) {
+            console.warn("Element with class 'places' not found. Cannot display places.");
+            return;
+        }
+        apartmentGrid.innerHTML = ''; // Clear existing content
+
+        // Use a DocumentFragment for efficient DOM manipulation
+        const fragment = document.createDocumentFragment();
+
+        apartmentData.forEach(apartment => {
+            const card = document.createElement('div');
+            // Add a class to the card if needed, e.g., 'place-card'
+            card.classList.add('post-property');
+            card.innerHTML = `
+                <img src="${apartment.image_url}" alt="${apartment.name}" loading = "lazy">
+                <h3>${apartment.type}</h3>
+                <p>${apartment.details}</p>
+                <p>${apartment.price}</p>
+                <button>Learn more</button>`
+            fragment.appendChild(card);
+        });
+        apartmentGrid.appendChild(fragment);
+    }
+
+
+
 
 
     const slideWrapper = document.querySelector('.carousel-slide-wrapper');
@@ -112,4 +160,125 @@ modifiedYearElements.innerHTML = `Last Modified ${new Intl.DateTimeFormat('en-UK
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+const OPENWEATHER_API_KEY_STRING = '5071297ee1335c91dacb2564bdc298cf'; // Your actual API key
+        const WEATHER_LAT = 5.55; 
+        const WEATHER_LON = 5.77;
+        // Fetch Weather Data
+        async function fetchWeatherData() {
+            // Construct correct URLs for current weather and forecast
+            const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${WEATHER_LAT}&lon=${WEATHER_LON}&units=metric&appid=${OPENWEATHER_API_KEY_STRING}`;
+            const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${WEATHER_LAT}&lon=${WEATHER_LON}&units=metric&appid=${OPENWEATHER_API_KEY_STRING}`;
+
+            try {
+                // Current Weather
+                const currentWeatherResponse = await fetch(currentWeatherUrl);
+                if (!currentWeatherResponse.ok) throw new Error(`HTTP error! status: ${currentWeatherResponse.status} from current weather`);
+                const currentWeatherData = await currentWeatherResponse.json();
+                document.getElementById('current-temp').textContent = currentWeatherData.main.temp.toFixed(0);
+                document.getElementById('weather-desc').textContent = currentWeatherData.weather[0].description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+                // 3-Day Forecast
+                const forecastResponse = await fetch(forecastUrl);
+                if (!forecastResponse.ok) throw new Error(`HTTP error! status: ${forecastResponse.status} from forecast`);
+                const forecastData = await forecastResponse.json();
+                displayForecast(forecastData); // Pass forecastData to displayForecast
+
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                document.getElementById('current-temp').textContent = 'N/A';
+                document.getElementById('weather-desc').textContent = 'Failed to load weather';
+                document.getElementById('forecast-container').innerHTML = '<p>Failed to load forecast.</p>';
+            }
+        }
+
+        function displayForecast(data) {
+            const forecastContainer = document.getElementById('forecast-container');
+            forecastContainer.innerHTML = '<h4>4-Day Forecast:</h4>'; // Clear previous content
+
+            const dailyForecasts = {}; // To store one forecast per day
+
+            // Iterate through the 3-hour forecast data from data.list
+            // Check if data.list exists and is an array
+            if (data && Array.isArray(data.list)) {
+                data.list.forEach(item => {
+                    const date = new Date(item.dt * 1000);
+                    const day = date.toDateString(); // Get date string to group by day
+
+                    // Only take the first forecast for each day to represent the daily temp
+                    if (!dailyForecasts[day]) {
+                        dailyForecasts[day] = {
+                            temp: item.main.temp,
+                            description: item.weather[0].description,
+                            icon: item.weather[0].icon
+                        };
+                    }
+                });
+            } else {
+                console.warn('Forecast data list is missing or not an array:', data);
+                forecastContainer.innerHTML += '<p>No forecast data available.</p>';
+                return; // Exit if no valid list
+            }
+
+            const forecastDays = Object.keys(dailyForecasts).slice(0, 4); // Get the next 3 days
+
+            forecastDays.forEach(day => {
+                const forecast = dailyForecasts[day];
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('forecast-day');
+
+                const dateObj = new Date(day);
+                dayElement.innerHTML = `
+                    <p><strong>${dateObj.toLocaleDateString('en-US', { weekday: 'short' })}</strong></p>
+                    <img src="https://openweathermap.org/img/wn/${forecast.icon}.png" alt="${forecast.description}">
+                    <p>${forecast.temp.toFixed(0)}°C</p>
+                    <p class="description">${forecast.description}</p>
+                `;
+                forecastContainer.appendChild(dayElement);
+            });
+        }
+
+
+        setTimeout(() => {
+        fetchWeatherData();
+       apartmentFetch(); 
+        let visitCount = localStorage.getItem('visitCount');
+        let header = document.querySelector("header");
+        let lastVisitTimestamp = parseInt(localStorage.getItem('lastVisitTimestamp'), 10);
+        let now = Date.now();
+        const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+        if (!lastVisitTimestamp) {
+            visitCount = 1;
+           let par = document.createElement("p");
+           
+
+           par.textContent = "Welcome! Explore our exclusive properties.";
+           par.className = 'my-new-paragraph';
+           par.classList.add("my-new-paragraph");
+           header.insertAdjacentElement('afterend', par);
+        } else {
+            const daysAgo = Math.floor((now - lastVisitTimestamp) / MS_PER_DAY);
+            if (daysAgo < 1) {
+                let par = document.createElement("p");
+
+                par.textContent = "Good to have you back again!";
+                par.className = 'my-new-paragraph';
+                par.classList.add("my-new-paragraph");
+                header.insertAdjacentElement('afterend', par);
+            } else {
+                let par = document.createElement("p");
+
+                par.textContent = `You last visited ${daysAgo} day(s) ago. Good to have you back!`;
+                par.className = 'my-new-paragraph';
+                par.classList.add("my-new-paragraph");
+                header.insertAdjacentElement('afterend', par);
+            }
+            visitCount = parseInt(visitCount || 0) + 1; 
+        }
+
+        localStorage.setItem('visitCount', visitCount);
+        localStorage.setItem('lastVisitTimestamp', now); 
+
+    }, 0);
 });
