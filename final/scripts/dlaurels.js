@@ -75,7 +75,7 @@ async function apartmentFetch() {
             card.classList.add('post-property');
             card.innerHTML = `
                 <img src="${apartment.image_url}" alt="${apartment.name}" loading = "lazy">
-                <h3>${apartment.type}</h3>
+                <h2>${apartment.type}</h2>
                 <p>${apartment.details}</p>
                 <p>${apartment.price}</p>
                 <button>Learn more</button>`
@@ -194,7 +194,7 @@ const OPENWEATHER_API_KEY_STRING = '5071297ee1335c91dacb2564bdc298cf'; // Your a
 
         function displayForecast(data) {
             const forecastContainer = document.getElementById('forecast-container');
-            forecastContainer.innerHTML = '<h4>4-Day Forecast:</h4>'; // Clear previous content
+            forecastContainer.innerHTML = '<h3>4-Day Forecast:</h3>'; // Clear previous content
 
             const dailyForecasts = {}; // To store one forecast per day
 

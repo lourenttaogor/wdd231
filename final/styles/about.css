@@ -148,7 +148,7 @@ nav ul li{
 
 .exe-board h4 {
   font-size: 1rem;
-  color: #6c757d; /* A lighter gray for the title */
+  color: var(--primary-color); /* A lighter gray for the title */
   font-weight: normal;
   margin: 0;
 }
