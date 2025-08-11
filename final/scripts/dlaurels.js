@@ -51,7 +51,7 @@ async function apartmentFetch() {
             const data = await response.json(); 
             displayApartment(data);
         } catch (error) {
-            console.error('Error fetching place data:', error);
+            console.error('Error fetching apartment data:', error);
         }
     }
 
@@ -166,8 +166,8 @@ const OPENWEATHER_API_KEY_STRING = '5071297ee1335c91dacb2564bdc298cf'; // Your a
         const WEATHER_LON = 5.77;
         // Fetch Weather Data
         async function fetchWeatherData() {
-            // Construct correct URLs for current weather and forecast
-            const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${WEATHER_LAT}&lon=${WEATHER_LON}&units=metric&appid=${OPENWEATHER_API_KEY_STRING}`;
+            // Construct correct URLs for current weathher and forecast
+            const currentWeatherUrl = `ttps://api.openweathermap.org/data/2.5/weather?lat=${WEATHER_LAT}&lon=${WEATHER_LON}&units=metric&appid=${OPENWEATHER_API_KEY_STRING}`;
             const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${WEATHER_LAT}&lon=${WEATHER_LON}&units=metric&appid=${OPENWEATHER_API_KEY_STRING}`;
 
             try {
