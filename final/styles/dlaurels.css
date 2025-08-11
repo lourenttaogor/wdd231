@@ -20,8 +20,9 @@ body{
         border: var(--primary-color);
     }
 
-header h2, header h1{
+header h2, header .second-head{
     font-size: 1.8rem;
+    font-weight: bold;
 }
 
 .icon{
