@@ -77,10 +77,17 @@ nav ul li{
     font-weight: bold;
     border-bottom: 2px solid var(--accent1);
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .about-page {
   max-width: 1200px; /* Limits the page width on large screens */
   margin: 0 auto;
   padding: 20px;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .about-page section {
@@ -94,7 +101,7 @@ nav ul li{
 .about-page section h2 {
   text-align: center;
   color: var(--accent1); /* A primary blue color for headings */
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   border-bottom: 2px solid #e9ecef;
   padding-bottom: 10px;
@@ -154,12 +161,17 @@ nav ul li{
   margin: 0;
 }
 footer {
-    background-color: var(--accent2);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 1.5rem 2rem;
     text-align: center;
     font-weight: 500;
     margin-top: 20px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--secondary-color);
 }

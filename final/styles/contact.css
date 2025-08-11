@@ -76,12 +76,19 @@ nav ul li{
 .navigation a.active {
     font-weight: bold;
     border-bottom: 2px solid var(--accent1);
+
 }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 .contact-page {
     padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 .contact-container {
@@ -149,7 +156,7 @@ nav ul li{
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     display: block;
     width: auto;
     margin: 1.5rem auto 0;
@@ -157,28 +164,30 @@ nav ul li{
 
 .contact-form input[type="submit"]:hover {
     background-color: var(--accent1);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
 h1, h2 {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--accent1);
 }
 
 .modal-content {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
     padding: 3rem;
-    background-color: #0379074d;
+    background-color: var(--accent1);
 }
 .hide {
     display: none;
 }
 .close-button {
-    color: #a70202;
+    color: var(--secondary-color);
+    background: none;
+    border: none;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -193,14 +202,19 @@ h1, h2 {
     cursor: pointer;
 }
 footer {
-    background-color: var(--accent2);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 1.5rem 2rem;
     text-align: center;
     font-weight: 500;
     margin-top: 20px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--secondary-color);
 }
 
 
