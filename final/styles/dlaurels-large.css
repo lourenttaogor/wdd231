@@ -9,7 +9,7 @@
         justify-content: space-between;
         align-items: center;
     }
-    header h2, header .second-head{
+    header h1, header .second-head{
     font-size: 3rem;
     }
     .navigation {
